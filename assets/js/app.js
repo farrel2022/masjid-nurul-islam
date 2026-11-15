@@ -246,7 +246,15 @@
     return '<article class="kartu item anim-masuk" style="--i:' + i + '"><span class="lencana">' + esc(lencana) + '</span><h3>' + esc(judul) + '</h3>' + (sub ? '<div class="meta">' + sub + '</div>' : '') + '<p>' + esc(ket) + '</p>' + tautanWA("Assalamu'alaikum, saya melihat " + judul + ' di website Masjid Nurul Islam.', 'Hubungi lewat WhatsApp', nomor || '-') + '</article>';
   }
   function hMuamalah(el) {
-    saring(el, K.muamalah || [], 'jenis', function (x, i) { return kartuUsaha(x.nama, x.jenis, '', x.ket, x.whatsapp, i); }, 'Belum ada usaha di kategori ini.');
+    var LY = K.muamalahLayanan || [];
+    el.innerHTML = (LY.length ? '<div class="mu-daftar">' + LY.map(function (x, i) {
+      var foto = (x.foto || []).slice(0, 3);
+      return '<article class="kartu mu anim-masuk" style="--i:' + i + '"><div class="mu-tx"><span class="mu-ikon">' + ik(esc(x.ikon || 'toko')) + '</span><span class="mu-gr"></span>' +
+        '<div><h2><span class="mu-no">' + (i + 1) + '.</span> ' + esc(x.nama) + '</h2><p>' + esc(x.ket) + '</p></div></div>' +
+        (foto.length ? '<div class="mu-foto" aria-hidden="true">' + foto.map(function (f) { return '<span class="mu-f"><img src="' + esc(f) + '" alt="" loading="lazy" decoding="async"></span>'; }).join('') + '</div>' : '') +
+        '</article>';
+    }).join('') + '</div>' : '') + '<h2 class="h-sub">Direktori usaha warga</h2><div class="form" id="mu-dir"></div>';
+    saring($('#mu-dir', el), K.muamalah || [], 'jenis', function (x, i) { return kartuUsaha(x.nama, x.jenis, '', x.ket, x.whatsapp, i); }, 'Belum ada usaha di kategori ini.');
     el.insertAdjacentHTML('beforeend', '<section class="kartu item anim-masuk"><h3>Promosikan usaha Anda</h3><p>Warga dapat mendaftarkan usaha, jasa, atau produk untuk ditampilkan di Pasar Berkah.</p><div>' + (M.whatsapp ? tautanWA("Assalamu'alaikum, saya ingin mendaftarkan usaha di Pasar Berkah Masjid Nurul Islam.", 'Daftarkan usaha') : '<a class="tautan-wa" href="kontak.html">' + ik('telepon') + 'Hubungi pengurus</a>') + '</div></section>');
   }
   function hKerja(el) {
