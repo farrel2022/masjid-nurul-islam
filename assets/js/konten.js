@@ -124,6 +124,17 @@ window.KONTEN = {
     { nama: "Pengembangan UMKM & Unit Usaha Masjid", ikon: "grafik",
       ket: "Pembinaan UMKM warga serta pengembangan usaha produktif dan unit usaha milik masjid.",
       foto: ["assets/img/muamalah-umkm.webp"] }
+<<<<<<< HEAD
+=======
+  ],
+
+  /* ---------- MUAMALAH WARGA: DIREKTORI USAHA ----------
+     jenis: "Pasar Berkah", "Mitra Jasa", atau "Galeri Usaha"                  */
+  muamalah: [
+    { nama: "Contoh usaha makanan warga", jenis: "Pasar Berkah", ket: "Tulis produk dan lokasi singkat.", whatsapp: "" },
+    { nama: "Contoh jasa servis warga", jenis: "Mitra Jasa", ket: "Tulis jenis jasa dan area layanan.", whatsapp: "" },
+    { nama: "Contoh UMKM warga", jenis: "Galeri Usaha", ket: "Tulis produk unggulan.", whatsapp: "" }
+>>>>>>> 0dc6098b8d31c12a69426bcda74fa429f90cf348
   ],
 
 

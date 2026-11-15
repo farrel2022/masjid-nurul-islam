@@ -253,7 +253,13 @@
         '<div><h2><span class="mu-no">' + (i + 1) + '.</span> ' + esc(x.nama) + '</h2><p>' + esc(x.ket) + '</p></div></div>' +
         (foto.length ? '<div class="mu-foto" aria-hidden="true">' + foto.map(function (f) { return '<span class="mu-f"><img src="' + esc(f) + '" alt="" loading="lazy" decoding="async"></span>'; }).join('') + '</div>' : '') +
         '</article>';
+<<<<<<< HEAD
     }).join('') + '</div>' : kosong('Informasi layanan muamalah belum tersedia.'));
+=======
+    }).join('') + '</div>' : '') + '<h2 class="h-sub">Direktori usaha warga</h2><div class="form" id="mu-dir"></div>';
+    saring($('#mu-dir', el), K.muamalah || [], 'jenis', function (x, i) { return kartuUsaha(x.nama, x.jenis, '', x.ket, x.whatsapp, i); }, 'Belum ada usaha di kategori ini.');
+    el.insertAdjacentHTML('beforeend', '<section class="kartu item anim-masuk"><h3>Promosikan usaha Anda</h3><p>Warga dapat mendaftarkan usaha, jasa, atau produk untuk ditampilkan di Pasar Berkah.</p><div>' + (M.whatsapp ? tautanWA("Assalamu'alaikum, saya ingin mendaftarkan usaha di Pasar Berkah Masjid Nurul Islam.", 'Daftarkan usaha') : '<a class="tautan-wa" href="kontak.html">' + ik('telepon') + 'Hubungi pengurus</a>') + '</div></section>');
+>>>>>>> 0dc6098b8d31c12a69426bcda74fa429f90cf348
   }
   function hKerja(el) {
     saring(el, K.lowongan || [], 'tipe', function (x, i) { return kartuUsaha(x.posisi, x.tipe, ik('koper') + esc(x.usaha) + ', ' + esc(x.lokasi), x.ket, x.whatsapp, i); }, 'Belum ada informasi di kategori ini.');
