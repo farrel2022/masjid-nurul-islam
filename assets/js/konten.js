@@ -107,12 +107,31 @@ window.KONTEN = {
     fasilitas: ["Tuliskan fasilitas pertama", "Tuliskan fasilitas kedua", "Tuliskan fasilitas ketiga"]
   },
 
-  /* ---------- MUAMALAH WARGA ----------
-     jenis: "Pasar Berkah", "Jasa", atau "UMKM"                                */
+  /* ---------- MUAMALAH WARGA: LAYANAN ----------
+     Empat kartu besar di halaman Muamalah Warga.
+     ikon: jangan diubah. foto: boleh 1 sampai 3 foto, ganti dengan foto asli kegiatan
+     (unggah ke folder assets/img lalu tulis alamatnya di sini).                   */
+  muamalahLayanan: [
+    { nama: "Pasar Berkah", ikon: "keranjang",
+      ket: "Tempat warga menawarkan makanan, minuman, busana muslim, dan berbagai kebutuhan rumah tangga lainnya.",
+      foto: ["assets/img/muamalah-pasar-1.webp", "assets/img/muamalah-pasar-2.webp", "assets/img/muamalah-pasar-3.webp"] },
+    { nama: "Mitra Jasa", ikon: "perkakas",
+      ket: "Wadah berbagai layanan jasa warga, seperti permak pakaian, servis listrik dan peralatan rumah tangga, perbaikan kendaraan, tukang bangunan, pijat kebugaran, dan jasa lainnya.",
+      foto: ["assets/img/muamalah-jasa-1.webp", "assets/img/muamalah-jasa-2.webp", "assets/img/muamalah-jasa-3.webp"] },
+    { nama: "Galeri Usaha", ikon: "toko",
+      ket: "Ruang promosi dan pengenalan berbagai usaha warga melalui profil usaha, katalog produk, lokasi, dan kontak pemilik.",
+      foto: ["assets/img/muamalah-galeri-1.webp", "assets/img/muamalah-galeri-2.webp", "assets/img/muamalah-galeri-3.webp"] },
+    { nama: "Pengembangan UMKM & Unit Usaha Masjid", ikon: "grafik",
+      ket: "Pembinaan UMKM warga serta pengembangan usaha produktif dan unit usaha milik masjid.",
+      foto: ["assets/img/muamalah-umkm.webp"] }
+  ],
+
+  /* ---------- MUAMALAH WARGA: DIREKTORI USAHA ----------
+     jenis: "Pasar Berkah", "Mitra Jasa", atau "Galeri Usaha"                  */
   muamalah: [
     { nama: "Contoh usaha makanan warga", jenis: "Pasar Berkah", ket: "Tulis produk dan lokasi singkat.", whatsapp: "" },
-    { nama: "Contoh jasa servis warga", jenis: "Jasa", ket: "Tulis jenis jasa dan area layanan.", whatsapp: "" },
-    { nama: "Contoh UMKM warga", jenis: "UMKM", ket: "Tulis produk unggulan.", whatsapp: "" }
+    { nama: "Contoh jasa servis warga", jenis: "Mitra Jasa", ket: "Tulis jenis jasa dan area layanan.", whatsapp: "" },
+    { nama: "Contoh UMKM warga", jenis: "Galeri Usaha", ket: "Tulis produk unggulan.", whatsapp: "" }
   ],
 
   /* ---------- BURSA KERJA ---------- */
